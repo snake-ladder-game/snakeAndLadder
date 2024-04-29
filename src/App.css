@@ -1,0 +1,372 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(170, 196, 157);
+  background-image: radial-gradient(rgb(112, 126, 105), rgb(72, 95, 60));
+  overflow: scroll;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.container {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  padding: 20px 0;
+}
+
+@media (max-width: 1050px) {
+  .main {
+    flex-direction: column;
+  }
+}
+
+.second {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  gap: 25px;
+  margin-top: 80px;
+}
+
+.ladders img {
+  position: absolute;
+  background-image: url();
+  left: 38.5%;
+  top: 47%;
+  width: 9%;
+  height: 14%;
+  transform: rotate(25deg);
+  filter: hue-rotate(200deg) saturate(500%) brightness(50%);
+}
+
+.ladder1 img {
+  position: absolute;
+  left: 16%;
+  top: 4.5%;
+  width: 9%;
+  height: 28%;
+  transform: rotate(27deg);
+  filter: hue-rotate(900deg) saturate(500%) brightness(50%);
+  background-image: url();
+}
+.ladder2 img {
+  position: absolute;
+  left: 44%;
+  top: 4.5%;
+  width: 9%;
+  height: 15%;
+  transform: rotate(-24deg);
+  filter: hue-rotate(300deg) saturate(500%) brightness(50%);
+}
+.ladder3 img {
+  position: absolute;
+  left: 28%;
+  top: 23%;
+  width: 9%;
+  height: 28%;
+  transform: rotate(27deg);
+  filter: hue-rotate(1400deg) saturate(500%) brightness(50%);
+  background-image: url();
+}
+.ladder4 img {
+  position: absolute;
+  left: 52%;
+  top: 30%;
+  width: 9%;
+  height: 14%;
+  transform: rotate(-27deg);
+  filter: hue-rotate(1500deg) saturate(500%) brightness(50%);
+}
+
+.backSnake img {
+  position: absolute;
+  left: 70%;
+  top: 15%;
+  width: 22%;
+}
+.snake1 img {
+  position: absolute;
+  left: 50%;
+  top: 6%;
+  width: 15%;
+  height: 28%;
+  transform: rotate(38deg);
+  filter: hue-rotate(900deg) saturate(500%) brightness(70%);
+}
+.snake2 img {
+  position: absolute;
+  left: 62%;
+  top: 17%;
+  width: 8%;
+  height: 35%;
+  transform: rotate(195deg);
+  filter: hue-rotate(450deg) saturate(180%) brightness(80%);
+}
+.snake3 img {
+  background-image: url();
+  position: absolute;
+  left: 20%;
+  top: 3%;
+  width: 12%;
+  height: 56%;
+  transform: rotate(200deg);
+  filter: saturate(180%) brightness(80%);
+}
+.snake5 img {
+  background-image: url();
+  position: absolute;
+  left: 37%;
+  top: 30%;
+  width: 12%;
+  height: 28%;
+  transform: rotate(40deg);
+  filter: hue-rotate(45deg) saturate(180%) brightness(80%);
+}
+
+.snake4 img {
+  position: absolute;
+  left: 44%;
+  top: 44%;
+  width: 15%;
+  height: 18%;
+  transform: rotate(3deg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 60px);
+
+  transition: all ease 500ms;
+  position: absolute;
+  left: 10%;
+  background-image: url("https://wallpapercave.com/wp/wp9142011.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#number {
+  font-size: 10px;
+  font-weight: 800;
+  z-index: -99;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 7px;
+  margin: 5px;
+  backdrop-filter: blur(4px);
+  font-weight: 700;
+  background: #efefef;
+  border: none;
+  border-radius: 0.5rem;
+  color: #444;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.noneActive {
+  width: 60px;
+  height: 60px;
+  border-collapse: collapse;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ease 500ms;
+  margin: 0;
+}
+
+.playerOneActive {
+  background-image: url("./assets/3D-Cartoon-Animal-PNG-HD.png");
+  transition: all ease 500ms;
+  background-size: cover;
+  background-size: 120%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.playerTwoActive {
+  background-image: url("./assets/3D-Cartoon-PNG-Isolated-HD.png");
+  transition: all ease 500ms;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bothActive {
+  background-image: url("./assets/3D-Cartoon-PNG-Isolated-HD.png"),
+    url("./assets/3D-Cartoon-Animal-PNG-HD.png");
+  background-size: cover;
+  background-size: 75%;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  align-items: center;
+  background-position: right, left;
+}
+
+h1 {
+  color: aliceblue;
+}
+
+video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: lighten;
+  left: 0px;
+  top: 0;
+}
+
+#new {
+  z-index: 99;
+}
+/* card */
+.card {
+  width: 54px;
+  height: 52px;
+  background-color: rgb(202, 191, 0);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  transition: all ease-in-out 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 22%;
+  left: 69%;
+}
+.flipCard {
+  width: 54px;
+  height: 52px;
+  background-color: rgb(202, 191, 0);
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(1080deg);
+  /* bottom: 20%; */
+  position: absolute;
+  top: 25%;
+  left: 73%;
+  transition: all ease-in-out 1s;
+}
+
+.button-86 {
+  all: unset;
+  width: 90px;
+  height: 20px;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #f0f0f0;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-86::after,
+.button-86::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all 0.4s;
+}
+
+.button-86::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: rgb(55, 94, 10);
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+  border-radius: 10px;
+}
+
+.button-86::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: #ffffff15;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+}
+
+.button-86:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+.button-86:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.button-86:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+}
