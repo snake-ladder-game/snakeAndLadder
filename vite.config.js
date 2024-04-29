@@ -5,4 +5,6 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base : "Snake-and-ladder",
   plugins: [react()],
+  base: "/snakeAndLadder/"
+
 })
